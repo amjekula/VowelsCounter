@@ -3,13 +3,13 @@ pipeline {
     stages {
       stage('build') {
         steps {
-          echo 'Generating Build'
+           sh 'mvn compile'
         }
       }
 
       stage('test') {
         steps {
-          echo 'Generating Test'
+           sh 'mvn test'
         }
       }
 
