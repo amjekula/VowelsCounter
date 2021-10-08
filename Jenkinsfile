@@ -3,15 +3,18 @@ pipeline {
     stages {
       stage('build') {
         steps {
-           sh 'mvn compile'
+           withMaven{
+                sh 'mvn clean compile'
+           }
         }
       }
 
       stage('test') {
         steps {
-           sh 'mvn test'
+        withMaven{
+            sh 'mvn test'
+            }
         }
       }
-
     }
 }
