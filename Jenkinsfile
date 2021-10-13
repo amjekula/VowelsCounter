@@ -4,7 +4,7 @@ pipeline {
         maven 'maven3'
     }
 
-    stages {
+    //stages {
       stage('Build') {
         steps {
            withMaven (maven: 'maven3'){
@@ -28,5 +28,5 @@ pipeline {
                version: '1.0-SNAPSHOT'
         }
       }
-    }
+    //}
 }
