@@ -5,10 +5,10 @@ pipeline {
     }
 
     stages {
-      stage('maven compile') {
+      stage('Build') {
         steps {
            withMaven (maven: 'maven3'){
-                sh 'mvn clean install'
+                sh script: 'mvn clean deploy'
            }
         }
         stage('Upload jar to Nexus'){
