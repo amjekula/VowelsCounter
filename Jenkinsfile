@@ -1,15 +1,16 @@
 pipeline {
     agent any
-    /* tools{
+    tools{
         maven 'maven3'
-    } */
+    }
 
     stages {
       stage('Build') {
         steps {
-           withMaven (maven: 'maven3'){
+            sh script: 'mvn clean deploy'
+           /* withMaven (maven: 'maven3'){
                 sh script: 'mvn clean deploy'
-           }
+           } */
         }
         stage('Upload jar to Nexus'){
             nexusArtifactUploader artifacts: [
