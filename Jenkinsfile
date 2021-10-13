@@ -5,14 +5,14 @@ pipeline {
     }
 
     stages {
-      stage('Build') {
+      stage('Build', parallel) {
         steps {
             sh script: 'mvn clean deploy'
            /* withMaven (maven: 'maven3'){
                 sh script: 'mvn clean deploy'
            } */
         }
-        stage('Upload jar to Nexus'){
+        stage('Upload jar to Nexus', parallel){
             nexusArtifactUploader artifacts: [
                 [
                     artifactId: 'VowelsCounter',
