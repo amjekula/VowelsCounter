@@ -5,7 +5,7 @@ pipeline {
     }
 
     stages {
-      stage('maven compile') {
+      //stage('maven compile') {
         steps {
            withMaven (maven: 'maven3'){
                 sh 'mvn clean install'
@@ -27,6 +27,6 @@ pipeline {
                repository: 'maven-snapshots',
                version: '1.0-SNAPSHOT'
         }
-      }
+      //}
     }
 }
