@@ -38,13 +38,13 @@
   <distributionManagement>
     <snapshotRepository>
       <id>maven-snapshots</id>
-      <url>http://172.17.0.2:8081/repository/maven-snapshots/</url>
+      <url>http://172.17.0.1:8081/repository/maven-snapshots/</url>
       <layout>default</layout>
     </snapshotRepository>
 
     <repository>
       <id>maven-releases</id>
-      <url>http://172.17.0.2:8081/repository/maven-releases/</url>
+      <url>http://172.17.0.1:8081/repository/maven-releases/</url>
       <layout>default</layout>
     </repository>
   </distributionManagement>
@@ -60,7 +60,7 @@
           <extensions>true</extensions>
           <configuration>
             <serverId>maven-snapshots</serverId>
-            <nexusUrl>http://172.17.0.2:8081/repository/vowels-counter-app</nexusUrl>
+            <nexusUrl>http://172.17.0.1:8081/repository/vowels-counter-app</nexusUrl>
           </configuration>
         </plugin>
 
